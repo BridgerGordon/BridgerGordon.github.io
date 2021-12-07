@@ -1,0 +1,508 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>American Time Usage</title>
+
+    <!-- Load Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,400,300,400italic,700' rel='stylesheet'
+          type='text/css'>
+
+    <!-- CSS libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+
+    <!-- Custom CSS code -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!--Intro Page-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <div>
+                <div class="scroll-indicator" id="section00" data-scroll-indicator-title="Home"></div>
+            </div>
+            <!-- header -->
+            <div class="row justify-content-center" style="height: 100vh">
+                <div class="align-self-center">
+                    <h1 id="title">American Time Usage</h1>
+                    <h2 class="line-1 anim-typewriter" style="color:tomato; ">in the Era of the COVID-19 Pandemic</h2>
+                    <br>
+                    <div style="background: linear-gradient(to bottom, #33ccff 0%, white 100%);">
+                        <img src="images/people.png" alt="people" height="100">
+                        <img class="text" src="images/Clock1.gif" alt="clock" width="200" height="200">
+                        <img src="images/people2.png" alt="more people" height="90">
+                    </div>
+                    <hr style="color: tomato; width: 120%; margin-left: -13vh; margin-top: 10vh; padding-top: 2px">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--Intro Continued Page-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <div>
+                <div class="scroll-indicator" id="section01" data-scroll-indicator-title="COVID-19"></div>
+            </div>
+<!--            <img class="globe" src="images/covid-pic-globe.png" alt="globe" height="150">-->
+            <!-- Try and get these images to move continuously across the screen-->
+
+<!--        <img id="covid-sphere" src="images/covid-pic.png" alt="covid" height="50">-->
+<!--        <img class="covid-spheres" src="images/covid-pic.png" alt="covid" height="50">-->
+<!--        <img class="covid-spheres" src="images/covid-pic.png" alt="covid" height="50">-->
+            <h1>COVID-19</h1>
+            <div class="row justify-content-center" style="height: 65vh; margin: 5vh; width: 100%;
+             border: medium solid tomato; border-radius: 20px; color:black; padding: 15px">
+
+                <h6 class="fade-in">
+                    The pandemic radically affected millions of American's day-to-day lives. Jobs were
+                    lost, schools were closed, and travel was limited. We want to understand the magnitude
+                    of this disruption through analyzing the ways people spent their time differently during 2020.
+                </h6>
+                <h6 class="fade-in">
+                    Each year, the Bureau of Labor Statistics surveys roughly ten thousand households for the
+                    <b>American Time Usage Survey</b>, a project which tracks how Americans spend their time.
+                    This data helps track <i>how our society chooses to use our collective time</i> — on work, on leisure,
+                    on care, on volunteering. This also reveals how we prioritize or change certain behaviors during
+                    different time periods, like during a pandemic.
+                </h6>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--First Page-->
+<div class="container-fluid" style="margin-top: 10vh">
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <div>
+                <div class="scroll-indicator" id="section02" data-scroll-indicator-title="Source of Time"></div>
+            </div>
+            <!-- header -->
+            <div class="row justify-content-center" style="height: 10vh; margin: auto; width: 100%" id="headingTimeSource">
+                <div class="align-self-center">
+                    <h1><b>Work</b> is still the largest time source for people in 2020</h1>
+                </div>
+            </div>
+
+            <div class="row justify-content-center" style="height: 80vh">
+                <div class="align-self-center" id="bubble-chart" style="width: 90%; height: 90%"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--Second Page-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 offset-2" style="margin-top: 15vh; border: medium solid tomato; border-radius: 5px; width: 90%; height: 120%; margin-left: 10vh; padding-bottom: 10vh">
+            <div>
+                <div class="scroll-indicator" id="section03" data-scroll-indicator-title="Time Spent"></div>
+            </div>
+            <!-- header -->
+            <div class="row justify-content-center" style="height: 30vh">
+                <div class="align-self-center">
+                    <h1>How has time spent doing different activities <i>changed</i> from 2019 to 2020?</h1>
+                </div>
+            </div>
+
+            <!-- graph -->
+            <div class="row justify-content-center" style="height: 80vh; width: 120%; margin-left: -20vh;">
+
+                <div class="col-md-3">
+                    <center>
+                        <label for="ranking-type">Category:</label>
+                        <select class="form-control" id="ranking-type" onchange="selectChanged()">
+                            <option value="change">Percent Change</option>
+                            <option value="minChange">Absolute Change in Minutes</option>
+                            <option value="avgTime19">2019 Average Time by Activity</option>
+                            <option value="avgTime20">2020 Average Time by Activity</option>
+                        </select>
+                    </center>
+
+                </div>
+
+                <div class="align-self-center" id="change-bar-chart" style="height: 100%; width: 100%"></div>
+
+            </div>
+
+            <div class="row justify-content-center" style="height: 5vh">
+                <div class="align-self-center" style="height: 100%; width: 100%"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Third Page-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <div>
+                <div class="scroll-indicator" id="section04" data-scroll-indicator-title="Last Two Decades"></div>
+            </div>
+            <!-- header -->
+            <div class="row justify-content-center" style="height: 20vh">
+                <div class="align-self-center">
+                    <div class="fade-in">
+                        <h1>Time Usage Over the Last Two Decades</h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- graph -->
+            <div class="row justify-content-center" style="height: 65vh">
+                <div class="fade-in">
+                    <div class="align-self-center" id="stacked-area-chart" style="height: 95%; width: 100%"></div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center" style="height: 15vh; margin: auto; width: 100%; padding: 15px;">
+                <div class="row" style="border: black">
+                    <div class="column" style="background-color:#ffd0c7; border: black">
+                        <h8>Consistently throughout the last two decades, the largest proportions of time
+                            are spent on work, education, and sleep. The overall breakdown of average time per activity
+                            is surprisingly steady.
+                        </h8>
+                    </div>
+                    <div class="column" style="background-color:#ffd0c7; border: black">
+                        <h8>Occasionally, there are bumps in how much
+                            time certain activities get, like a bump around 2014 in <i>"government + civic activities"</i>
+                            (which might be from voting in the midterm elections that year).
+                        </h8>
+                    </div>
+                </div>
+                <div class="row justify-content-center" style="height: 5vh">
+                    <div class="align-self-center" style="height: 100%; width: 100%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Fourth Page-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 offset-2"
+             style="margin-top: 15vh; border: medium solid tomato; border-radius: 5px; width: 90%; height: 120%; margin-left: 10vh">
+            <div>
+                <div class="scroll-indicator" id="section05" data-scroll-indicator-title="Job Losses"></div>
+            </div>
+            <!-- header -->
+            <div class="row justify-content-center" style="height: 15vh">
+                <div class="align-self-center">
+                    <h1>Job Losses</h1>
+                </div>
+            </div>
+
+            <div class="row justify-content-center" style="height: 75vh">
+                <div class="align-self-center"style="width: 100%"></div>
+                <div class="box">
+                    <div class="one" id="job-loss-guess" style="margin-top: 12vh">
+                        How many people in the US lost their jobs at the height of the pandemic? (In Millions) <br><br>
+                        <input type="text" id="GuessJobsLost" name="GuessJobsLost" placeholder="Type Your Guess Here"><br><br>
+                        <button id="submitJobLoss" value="US" onclick="guessJobLossFunction()">Submit</button>
+                    </div>
+                    <div class="two">
+                        <div id="jobLoss" style="height: 80vh;">
+                            <img src="images/covid%20image%204.jfif" alt="Pic" style="height: 40vh; margin-top: 10vh">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--Fifth Page-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <div>
+                <div class="scroll-indicator" id="section06" data-scroll-indicator-title="Unemployment Rate"></div>
+            </div>
+            <!-- header -->
+            <div class="row justify-content-center" style="height: 15vh">
+                <div class="align-self-center">
+                    <div class="fade-in">
+                        <h1>Unemployment Rate</h1>
+                        <h2>Highest in Black and Brown Communities</h2>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row justify-content-center" style="height: 95vh"> <!--75vh-->
+                <div class="align-self-center"style="width: 100%">
+                    <div id="race" class="box">
+                            <div class="two-thirds">
+                                <!--                            <div id="chart-area-disparities"></div>-->
+                                <div id="unemployment-rate" style="height: 60vh; width: 100%"></div>
+                            </div>
+                            <div id="unemployment-rate-guess" class="one-third" style="margin-top: 10vh">
+                                What is the average US unemployment rate over this period of time? <br><br>
+                                <input type="text" name="GuessUSAvg" placeholder="Type Your Guess Here">
+                                <button id="submitUSAvg" value="US" onclick="guessUSAvgFunction()">Submit</button>
+                                <!-- On submit, dynamically draw a red line on the chart to the left to see how all of US compares to these racial breakdowns. Answer should pop up on the right-->
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <hr style="color: tomato; width: 120%; margin-left: -13vh; margin-top: 10vh; padding-top: 2px">
+        </div>
+    </div>
+</div>
+
+<!--Sixth Page-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <div>
+                <div class="scroll-indicator" id="section07" data-scroll-indicator-title="Avg Hours Worked"></div>
+            </div>
+            <!-- header -->
+            <div class="row justify-content-center" style="height: 20vh">
+                <div class="align-self-center">
+                    <div class="fade-in">
+                        <h1>The Unrelenting 40-Hour Workweek</h1>
+                        <h2>Average Hours Worked per Week by Income</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center" style="height: 60vh">
+                <div class="fade-in">
+                    <div class="align-self-center" id="avg-hours-worked" style="height: 100%; width: 100%"></div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center" style="height: 30vh; margin: auto; width: 80%">
+                <hr>
+                <h6><b><i>Each colored line represents a different year.</i></b></h6>
+                <div class="col col-lg-3">
+                    <label for="year"><b>Highlight a Year:</b></label>
+                    <select class="form-control" id="year" onchange="highlightYearFunction()">
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                        <option value="2009">2009</option>
+                        <option value="2008">2008</option>
+                        <option value="2007">2007</option>
+                        <option value="2006">2006</option>
+                        <option value="2005">2005</option>
+                        <option value="2004">2004</option>
+                        <option value="2003">2003</option>
+                    </select>
+                </div>
+                <div class="col">
+                <div class="align-self-center" style="height: 100%; width: 100%">
+                    <p>Overall, the relationship between income and hours worked is pretty flat — with actually the highest and lowest income earners working the most hours.
+                    As can be seen by the visualization above, the average number of hours worked are quite
+                        consistent over the last two decades, including during the 2020 pandemic.</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Seventh Page-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 offset-2"
+             style="margin-top: 5vh;">
+            <div>
+                <div class="scroll-indicator" id="section08" data-scroll-indicator-title="Top Time Uses"></div>
+            </div>
+            <!-- header -->
+            <div class="row justify-content-center" style="height: 15vh">
+                <div class="align-self-center">
+                    <form class="form-inLine">
+                        <div class=""form-check form-check-inline>
+                            <label for="chart-option">
+                                <h1>Top 5 Time Uses by</h1>
+                                <select class="form-control" id="chart-option" onchange="updateCategory()">
+                                    <option value="SEX" selected>Sex</option>
+                                    <option value="RACE">Race</option>
+                                </select>
+                            </label>
+                            <hr>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row justify-content-center" style="height: 75vh">
+                <div class="align-self-center" id="top-five-male" style="width: 50%; height: 50%"></div>
+                <div class="align-self-center" id="top-five-female" style="width: 50%; height: 50%"></div>
+                <div class="align-self-center" id="top-five-white" style="width: 50%; height: 30%"></div>
+                <div class="align-self-center" id="top-five-black" style="width: 50%; height: 30%"></div>
+                <div class="align-self-center" id="top-five-native" style="width: 50%; height: 30%"></div>
+                <div class="align-self-center" id="top-five-asian" style="width: 50%; height: 30%"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Eighth Page-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <div>
+                <div class="scroll-indicator" id="section09" data-scroll-indicator-title="Sleep and Personal Care"></div>
+            </div>
+            <!-- header -->
+            <div class="row justify-content-center" style="height: 10vh">
+                <div class="align-self-center">
+                    <h1>Time Spent on Sleep or Personal Care</h1>
+                </div>
+            </div>
+
+            <!-- graph -->
+            <div class="row justify-content-center" style="height: 90vh">
+                <div class="align-self-center" id="sleep-heatmap" style="height: 80%; margin: auto; width: 97%"></div>
+
+                <div class="align-self-center" style="height: 100%; margin: auto; width: 80%">
+                    <p>Younger people spend more time on sleep and personal care,
+                        with the median being between 10 and 12 hours per day. These age disparities really flatten out
+                    after the age of 20. Roughly 40% of people in the older age demographics spend an average of 8 to 10
+                    hours on sleep and personal care.</p>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+<!--Ninth Page-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 offset-2"
+             style="margin-top: 5vh;">
+            <div>
+                <div class="scroll-indicator" id="section10" data-scroll-indicator-title="The Average Day"></div>
+            </div>
+            <!-- header -->
+            <div class="row justify-content-center" style="height: 15vh">
+                <div class="align-self-center">
+                    <h1>Average Day for Americans in 2020</h1>
+                </div>
+            </div>
+
+            <div class="row justify-content-center" style="height: 75vh">
+                <div class="align-self-center"style="width: 100%">
+                    <div class="box">
+                        <div class="align-self-center" id="clock-charts" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Tenth Page-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 offset-2"
+             style="margin-top: 5vh; border: medium solid tomato; border-radius: 5px; background: #ffefec; width: 90%; margin-left: 12vh">
+            <div>
+                <div class="scroll-indicator" id="section11" data-scroll-indicator-title="Conclusion"></div>
+            </div>
+            <!-- header -->
+            <div class="row justify-content-center" style="height: 15vh">
+                <div class="align-self-center">
+                    <h1>Conclusions</h1>
+                    <h2>The pandemic has shifted the time people spend on certain activities.
+                        Although almost two years has passed since the start of the global pandemic,
+                        those living in the US are still adapting to the drastic changes that have resulted from COVID-19. </h2>
+                    <h2>Because of remote work, people were able to spend more time on leisure. But, COVID restrictions also made it tougher
+                    for people to spend time on volunteering or religious activities. There are interesting and large changes by group (age, sex, etc)
+                     in time usage patterns.</h2>
+                </div>
+                <div class="row">
+                    <div class="column2">
+                        <img src="images/headshot.JPEG" alt="Jordan" height="200">
+                        <br>
+                        Jordan Lawanson
+                    </div>
+                    <div class="column2">
+                        <img src="images/new%20hampshire.jpg" alt="Bridger" height="200">
+                        <br>
+                        Bridger Gordon
+                    </div>
+                    <div class="column2">
+                        <img src="images/Halle_Pic.jpg" alt="Halle" height="200">
+                        <br>
+                        Halle Clottey
+                    </div>
+                    <div class="column2">
+                        <img src="images/RegisterPhoto.jpg" alt="Rothsaida" height="200">
+                        <br>
+                        Rothsaida Sylvaince
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center" style="height: 60vh">
+                <div class="align-self-center"style="height: 100%; width: 100%"></div>
+            </div>
+
+            <div class="row justify-content-center" style="height: 15vh">
+                <div class="align-self-center" style="height: 100%; width: 100%"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Load JS libraries -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+        crossorigin="anonymous"></script>
+
+<!-- CSS for Easy Scroll Dots -->
+<link rel="stylesheet" type="text/css" href="EasyScrollDots/easyScrollDots.min.css" />
+
+<!-- JS for Easy Scroll Dots -->
+<script type="text/javascript" src="EasyScrollDots/easyScrollDots.min.js"></script>
+
+<!-- d3 -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<!-- jQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<!-- Load data, create visualizations -->
+<script src="js/main.js"></script>
+<script src="js/racial-disparities.js"></script>
+<script src="js/racial-disparities2.js"></script>
+<script src="js/stackedAreaChart.js"></script>
+<script src="js/BubbleChart.js"></script>
+<script src="js/avgHoursWorked.js"></script>
+<script src="js/pieChart.js"></script>
+<script src="js/changeBar.js"></script>
+<script src="js/clockChart.js"></script>
+<script src="js/sleepHeatmap.js"></script>
+<script src="js/outerClock.js"></script>
+
+</body>
+</html>
