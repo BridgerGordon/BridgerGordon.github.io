@@ -34,8 +34,8 @@ class ClockChart {
 
         // margin conventions
         vis.margin = {top: 0, right: 50, bottom: 0, left: 50};
-        vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
-        vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
+        vis.width = 400;
+        vis.height = 400;
 
         console.log(vis.width)
         console.log(vis.height)
