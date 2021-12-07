@@ -18,14 +18,14 @@ let mySleepHeatmap;
 
 // load data using promises
 let promises = [
-    d3.json("data/topLevelPercentage2.json"),
-    d3.csv("data/fulltimeHoursworked.csv"),
-    d3.csv("data/gendergrouping.csv"),
-    d3.csv("data/groupingbyrace.csv"),
-    d3.csv("data/change.csv"),
-    d3.csv("data/racial-disparities-copy.csv"),
-    d3.csv("data/sleepandpersonalcare.csv"),
-    d3.csv("data/timeData.csv")
+    d3.json("./data/topLevelPercentage2.json"),
+    d3.csv("./data/fulltimeHoursworked.csv"),
+    d3.csv("./data/gendergrouping.csv"),
+    d3.csv("./data/groupingbyrace.csv"),
+    d3.csv("./data/change.csv"),
+    d3.csv("./data/racial-disparities-copy.csv"),
+    d3.csv("./data/sleepandpersonalcare.csv"),
+    d3.csv("./data/timeData.csv")
 ];
 
 Promise.all(promises)
